@@ -1,0 +1,92 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    
+    <!--
+     *
+     * JavaScript / Canvas teaching framwork 
+     * (C)opyright Hartmut Schirmacher, hschirmacher.beuth-hochschule.de 
+     *
+    -->
+
+    <title>CG2 A1: Lines, Curves &amp; Canvas</title>
+    
+    <!-- import main module using RequireJS -->
+    <script data-main="main.js" src="../lib/require.js"></script>
+    
+    <!-- import style sheet -->
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    
+</head>
+
+<body>
+
+  <!-- this element will be used to diplay errors -->
+  <pre id="error"></pre>
+  
+  <!-- centered region with drawing canvas and parameter area -->
+  <div align="center">
+  
+    <canvas id="drawing_area" width="500" height="400" style="position:relative;">
+        <!-- NOTE: the "position:relative" is required due to the current  
+             implementation of mouse coordinate processing in module "util". -->
+        If you see this text, your browser probably does not 
+        support the HTML5 canvas 2D drawing context. 
+    </canvas>
+    
+    <div id="param_area" >
+
+        <h3>Create Objects:</h3>
+
+        <button id="btnNewLine" type="button"   >New Line</button>
+        <button id="btnNewCircle" type="button" >New Circle</button>
+        <!-- add more here... -->
+
+        change color: <input id="inputColor" type="color" name="choose color">
+        change line width:<input id="inputLineWidth"  type="number" name="lineWidth"><br/>
+        <label id="labelRadius">change radius</label> <input id="inputRadius" type="number" name="radius">
+
+    </div>
+    <div id="param_area_parametric_curves">
+
+        <h3> Selected Object:</h3>
+
+        <button id="btnNewParametricCurve" type="button"   >New Curve</button><br>
+
+        Line Width: <input id="curve_line_width" type="number">
+        Color: <input id="curve_line_color" type="color"><br>
+        x(t): <input id="curve_x" type="text"><br>
+        y(t): <input id="curve_y" type="text"><br>
+        Min t: <input id="min_t" type="number"><br>
+        Max t: <input id="max_t" type="number"><br>
+        Segments: <input id="curve_segments" type="number"><br>
+        tick marks: <input id="marks" type="checkbox">
+
+    </div>
+      <div id="param_area_bezier_curves">
+
+          <h3> Selected Object:</h3>
+
+          <button id="btnNewBezierCurve" type="button"   >New Bezier</button><br>
+
+          Line Width: <input id="bezier_line_width" type="number"><br>
+          Color: <input id="bezier_line_color" type="color"><br>
+          Point 1: <br>
+          x: <input id="bezier_point1_x" type="number">  y: <input id="bezier_point1_y" type="number"><br>
+          Point 2: <br>
+          x: <input id="bezier_point2_x" type="number">  y: <input id="bezier_point2_y" type="number"><br>
+          Point 3: <br>
+          x: <input id="bezier_point3_x" type="number">  y: <input id="bezier_point3_y" type="number"><br>
+          Point 4: <br>
+          x: <input id="bezier_point4_x" type="number">  y: <input id="bezier_point4_y" type="number">
+          Segments: <input id="bezier_segments" type="number"><br>
+          tick marks: <input id="bezier_marks" type="checkbox">
+
+      </div>
+       <div style="float:clear;">
+       </div>
+    
+  </div>
+  
+</body>
+</html>
