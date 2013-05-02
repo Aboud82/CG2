@@ -157,9 +157,10 @@ define(["jquery", "straight_line","Circle","Parametric_Curve","bezier_curve"],
             sceneController.deselect();
             sceneController.select(parametricCurve); // this will also redraw
             }
+          }));
 
         //Handler to draw Bezier curve
-         $("#btnNewBezierCurve").click(function(){
+         $("#btnNewBezierCurve").click((function(){
 
             // create the actual circle and add it to the scene
          var style = {
@@ -183,11 +184,11 @@ define(["jquery", "straight_line","Circle","Parametric_Curve","bezier_curve"],
          sceneController.deselect();
          sceneController.select(beziercurve); // this will also redraw
 
-        });
-
-
-
         }));
+
+
+
+
 
         //handler to change the x coordinate function
         $("#curve_x").change(function(){
@@ -229,7 +230,7 @@ define(["jquery", "straight_line","Circle","Parametric_Curve","bezier_curve"],
             }
             return true;
         };
-    };
+    };//HtmlController
 
 
     // shows the values of the style variable of the object and radius in case of circle object
@@ -240,6 +241,18 @@ define(["jquery", "straight_line","Circle","Parametric_Curve","bezier_curve"],
         if(object instanceof Circle){
         $("#inputRadius").val(object.radius);
          }
+        if(object instanceof BezierCurve){
+            $("#bezier_line_color").val(object.lineStyle.color);
+            $("#bezier_line_width").val(object.lineStyle.width);
+            $("#bezier_point1_x").val(object.point1[0]);
+            $("#bezier_point1_y").val(object.point1[1]);
+            $("#bezier_point2_x").val(object.point2[0]);
+            $("#bezier_point2_y").val(object.point2[1]);
+            $("#bezier_point3_x").val(object.point3[0]);
+            $("#bezier_point3_y").val(object.point3[1]);
+            $("#bezier_point4_x").val(object.point4[0]);
+            $("#bezier_point4_y").val(object.point4[1]);
+        }
     };
 
 

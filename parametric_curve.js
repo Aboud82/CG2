@@ -83,7 +83,7 @@ define(["util", "vec2", "scene", "point_dragger","straight_line"],
                 var sg = this.segmentsLines[i];
 
                 if (sg.isHit(context,pos)== true){
-                    alert('parametric hit');
+                    alert('parametric curve hit');
                     return true;
                }
              }

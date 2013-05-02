@@ -44,7 +44,7 @@ define(["util", "vec2", "scene", "point_dragger"],
 
     // draw this line into the provided 2D rendering context
     StraightLine.prototype.draw = function(context) {
-        console.log('line draw');
+
         // draw actual line
         context.beginPath();
         
