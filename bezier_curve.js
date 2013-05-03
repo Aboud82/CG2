@@ -5,8 +5,8 @@
  * Time: 10:19 AM
  * To change this template use File | Settings | File Templates.
  */
-define(["util", "vec2", "scene", "point_dragger","parametric_curve"],
-    (function(Util,vec2,Scene,PointDragger, ParametricCurve) {
+define(["util", "vec2", "scene", "point_dragger","parametric_curve", "bezier_dragger"],
+    (function(Util,vec2,Scene,PointDragger, ParametricCurve, BezierDragger) {
 
         "use strict";
 
@@ -41,7 +41,7 @@ define(["util", "vec2", "scene", "point_dragger","parametric_curve"],
         this.point4 = point4;
 
 
-
+        //prepare the functions of Bezier Czrve with the coordinates of the 4 control points
         this.x_func = "Math.pow((1-t),3)*"+this.point1[0]+ "+3*Math.pow((1-t),2)*t*"+this.point2[0] +
             "+3*(1-t)*t*t*"+ this.point3[0]+" + Math.pow(t,3)*"+ this.point4[0];
         this.y_func =  "Math.pow((1-t),3)*"+this.point1[1]+ "+ 3*Math.pow((1-t),2)*t*"+this.point2[1]+
@@ -49,7 +49,8 @@ define(["util", "vec2", "scene", "point_dragger","parametric_curve"],
 
         this.seg = seg;
 
-        this.bezier = new ParametricCurve(this.lineStyle, this.x_func, this.y_func, this.min_t,this.max_t,this.seg);
+        // Bezier Curve is a parametric curve
+        this.parametricCurveOf_bezier = new ParametricCurve(this.lineStyle, this.x_func, this.y_func, this.min_t,this.max_t,this.seg);
 
 
 
@@ -57,13 +58,12 @@ define(["util", "vec2", "scene", "point_dragger","parametric_curve"],
 
     // draw this circle into the provided 2D rendering context
     BezierCurve.prototype.draw = function(context){
-        this.bezier.draw(context);
+               this.parametricCurveOf_bezier.draw(context);
     };
 
      // test whether the mouse position is on this Bezier
      BezierCurve.prototype.isHit = function(context,pos){
-       if(this.bezier.isHit(context,pos))return true;
-        else false;
+       return this.parametricCurveOf_bezier.isHit(context,pos);
      };
 
      /*
@@ -79,17 +79,32 @@ define(["util", "vec2", "scene", "point_dragger","parametric_curve"],
           var getP2 = function() { return _bezier.point2; };
           var getP3 = function() { return _bezier.point3; };
           var getP4 = function() { return _bezier.point4; };
-          var setP1 = function(dragEvent) { _bezier.point1 = dragEvent.position; };
-          var setP2 = function(dragEvent) { _bezier.point2 = dragEvent.position; };
-          var setP3 = function(dragEvent) { _bezier.point3 = dragEvent.position; };
-          var setP4 = function(dragEvent) { _bezier.point4 = dragEvent.position; };
-          draggers.push( new PointDragger(getP1, setP1, draggerStyle) );
-          draggers.push( new PointDragger(getP2, setP2, draggerStyle) );
-          draggers.push( new PointDragger(getP3, setP3, draggerStyle) );
-          draggers.push( new PointDragger(getP4, setP4, draggerStyle) );
+
+          var setP1 = function(dragEvent) { _bezier.point1 = dragEvent.position; moveControlPointsOfBezier(_bezier)};
+          var setP2 = function(dragEvent) { _bezier.point2 = dragEvent.position; moveControlPointsOfBezier(_bezier)};
+          var setP3 = function(dragEvent) { _bezier.point3 = dragEvent.position; moveControlPointsOfBezier(_bezier)};
+          var setP4 = function(dragEvent) { _bezier.point4 = dragEvent.position; moveControlPointsOfBezier(_bezier)};
+
+
+           draggers.push( new BezierDragger(_bezier,getP1, setP1, draggerStyle) );
+           draggers.push( new BezierDragger(_bezier,getP2, setP2, draggerStyle) );
+           draggers.push( new BezierDragger(_bezier,getP3, setP3, draggerStyle) );
+           draggers.push( new BezierDragger(_bezier,getP4, setP4, draggerStyle) );
+
 
           return draggers;
        };
+
+        // Change the position of the control points of the Bezier Object
+        var moveControlPointsOfBezier = function(_bezier ){
+            _bezier.parametricCurveOf_bezier.x_func = "Math.pow((1-t),3)*"+_bezier.point1[0]+ "+3*Math.pow((1-t),2)*t*"+_bezier.point2[0] +
+                "+3*(1-t)*t*t*"+ _bezier.point3[0]+" + Math.pow(t,3)*"+ _bezier.point4[0];
+            _bezier.parametricCurveOf_bezier.y_func =  "Math.pow((1-t),3)*"+_bezier.point1[1]+ "+ 3*Math.pow((1-t),2)*t*"+_bezier.point2[1]+
+                "+3*(1-t)*t*t*"+_bezier.point3[1]+ "+ Math.pow(t,3)*"+ _bezier.point4[1];
+
+
+
+        };
 
         return BezierCurve;
     })); // define

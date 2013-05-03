@@ -23,7 +23,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="28" selection-start="2468" selection-end="2485" vertical-scroll-proportion="-6.5384617">
+            <state line="72" column="28" selection-start="2468" selection-end="2485" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -41,7 +41,7 @@
       <file leaf-file-name="bezier_curve.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bezier_curve.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="51" selection-start="655" selection-end="655" vertical-scroll-proportion="0.5992579">
+            <state line="80" column="60" selection-start="2933" selection-end="2933" vertical-scroll-proportion="0.13914657">
               <folding />
             </state>
           </provider>
@@ -50,36 +50,7 @@
       <file leaf-file-name="point_dragger.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/point_dragger.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="circle.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/circle.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="6" selection-start="1135" selection-end="1195" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="straight_line.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/straight_line.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="8" selection-start="2687" selection-end="2687" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="0" selection-start="1157" selection-end="1157" vertical-scroll-proportion="0.0">
+            <state line="55" column="54" selection-start="1897" selection-end="1897" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -94,10 +65,39 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="bezier_dragger.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bezier_dragger.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="87" column="0" selection-start="3267" selection-end="3267" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#156#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="circle.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/circle.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="0" selection-start="1248" selection-end="1248" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="straight_line.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/straight_line.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="8" selection-start="916" selection-end="916" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="parametric_curve.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/parametric_curve.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="7" selection-start="2918" selection-end="3070" vertical-scroll-proportion="0.0">
+            <state line="77" column="67" selection-start="2516" selection-end="2516" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -130,6 +130,8 @@
         <option value="$PROJECT_DIR$/parametric_curve.js" />
         <option value="$PROJECT_DIR$/straight_line.js" />
         <option value="$PROJECT_DIR$/html_controller.js" />
+        <option value="$PROJECT_DIR$/point_dragger.js" />
+        <option value="$PROJECT_DIR$/bezier_dragger.js" />
         <option value="$PROJECT_DIR$/bezier_curve.js" />
       </list>
     </option>
@@ -188,6 +190,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -208,7 +211,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -272,7 +274,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15636635" sideWeight="0.6712329" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16306776" sideWeight="0.6712329" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -340,13 +342,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="45" selection-start="1350" selection-end="1350" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scene.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -371,23 +366,9 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-3.470483" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scene.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="36" selection-start="479" selection-end="479" vertical-scroll-proportion="0.030411448">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="50" column="12" selection-start="942" selection-end="942" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scene_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="17" selection-start="4875" selection-end="4875" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -399,16 +380,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parametric_curve.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="7" selection-start="2918" selection-end="3070" vertical-scroll-proportion="0.0">
+        <state line="72" column="28" selection-start="2468" selection-end="2485" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/circle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="28" selection-start="2468" selection-end="2485" vertical-scroll-proportion="-6.5384617">
+        <state line="43" column="0" selection-start="1248" selection-end="1248" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="52" selection-start="619" selection-end="619" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scene_controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="143" column="17" selection-start="4875" selection-end="4875" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -420,32 +415,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/point_dragger.js">
+    <entry file="file://$PROJECT_DIR$/bezier_dragger.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="87" column="0" selection-start="3267" selection-end="3267" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#0#156#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/circle.js">
+    <entry file="file://$PROJECT_DIR$/parametric_curve.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="6" selection-start="1135" selection-end="1195" vertical-scroll-proportion="0.0">
+        <state line="77" column="67" selection-start="2516" selection-end="2516" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/straight_line.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="8" selection-start="2687" selection-end="2687" vertical-scroll-proportion="0.0">
+        <state line="27" column="8" selection-start="916" selection-end="916" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/point_dragger.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="54" selection-start="1897" selection-end="1897" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bezier_curve.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="51" selection-start="655" selection-end="655" vertical-scroll-proportion="0.5992579">
+        <state line="80" column="60" selection-start="2933" selection-end="2933" vertical-scroll-proportion="0.13914657">
           <folding />
         </state>
       </provider>
