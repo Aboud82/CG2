@@ -5,8 +5,8 @@
  * Time: 10:19 AM
  * To change this template use File | Settings | File Templates.
  */
-define(["util", "vec2", "scene", "point_dragger","parametric_curve", "bezier_dragger"],
-    (function(Util,vec2,Scene,PointDragger, ParametricCurve, BezierDragger) {
+define(["util", "vec2", "scene", "point_dragger","parametric_curve","control_polygon"],
+    (function(Util,vec2,Scene,PointDragger, ParametricCurve,  ControlPolygon) {
 
         "use strict";
 
@@ -52,11 +52,12 @@ define(["util", "vec2", "scene", "point_dragger","parametric_curve", "bezier_dra
         // Bezier Curve is a parametric curve
         this.parametricCurveOf_bezier = new ParametricCurve(this.lineStyle, this.x_func, this.y_func, this.min_t,this.max_t,this.seg);
 
-
+        //Control Polygon of Bezier
+        this.controlPolygon = new ControlPolygon(this.point1,this.point2,this.point3,this.point4);
 
     };
 
-    // draw this circle into the provided 2D rendering context
+    // draw this parametric Curve into the provided 2D rendering context
     BezierCurve.prototype.draw = function(context){
                this.parametricCurveOf_bezier.draw(context);
     };
@@ -73,6 +74,7 @@ define(["util", "vec2", "scene", "point_dragger","parametric_curve", "bezier_dra
           var draggerStyle = { radius:4, color: this.lineStyle.color, width:0, fill:true }
           var draggers = [];
 
+
           // create closure and callbacks for dragger
           var _bezier = this;
           var getP1 = function() { return _bezier.point1; };
@@ -80,17 +82,19 @@ define(["util", "vec2", "scene", "point_dragger","parametric_curve", "bezier_dra
           var getP3 = function() { return _bezier.point3; };
           var getP4 = function() { return _bezier.point4; };
 
-          var setP1 = function(dragEvent) { _bezier.point1 = dragEvent.position; moveControlPointsOfBezier(_bezier)};
-          var setP2 = function(dragEvent) { _bezier.point2 = dragEvent.position; moveControlPointsOfBezier(_bezier)};
-          var setP3 = function(dragEvent) { _bezier.point3 = dragEvent.position; moveControlPointsOfBezier(_bezier)};
-          var setP4 = function(dragEvent) { _bezier.point4 = dragEvent.position; moveControlPointsOfBezier(_bezier)};
+          var setP1 = function(dragEvent) { _bezier.point1 = dragEvent.position; moveControlPointsOfBezier(_bezier); moveControlPolygonLines(_bezier)};
+          var setP2 = function(dragEvent) { _bezier.point2 = dragEvent.position; moveControlPointsOfBezier(_bezier); moveControlPolygonLines(_bezier)};
+          var setP3 = function(dragEvent) { _bezier.point3 = dragEvent.position; moveControlPointsOfBezier(_bezier); moveControlPolygonLines(_bezier)};
+          var setP4 = function(dragEvent) { _bezier.point4 = dragEvent.position; moveControlPointsOfBezier(_bezier); moveControlPolygonLines(_bezier)};
 
 
-           draggers.push( new BezierDragger(_bezier,getP1, setP1, draggerStyle) );
-           draggers.push( new BezierDragger(_bezier,getP2, setP2, draggerStyle) );
-           draggers.push( new BezierDragger(_bezier,getP3, setP3, draggerStyle) );
-           draggers.push( new BezierDragger(_bezier,getP4, setP4, draggerStyle) );
+           draggers.push( new PointDragger(getP1, setP1, draggerStyle) );
+           draggers.push( new PointDragger(getP2, setP2, draggerStyle) );
+           draggers.push( new PointDragger(getP3, setP3, draggerStyle) );
+           draggers.push( new PointDragger(getP4, setP4, draggerStyle) );
 
+
+           draggers.push(_bezier.controlPolygon);
 
           return draggers;
        };
@@ -101,9 +105,14 @@ define(["util", "vec2", "scene", "point_dragger","parametric_curve", "bezier_dra
                 "+3*(1-t)*t*t*"+ _bezier.point3[0]+" + Math.pow(t,3)*"+ _bezier.point4[0];
             _bezier.parametricCurveOf_bezier.y_func =  "Math.pow((1-t),3)*"+_bezier.point1[1]+ "+ 3*Math.pow((1-t),2)*t*"+_bezier.point2[1]+
                 "+3*(1-t)*t*t*"+_bezier.point3[1]+ "+ Math.pow(t,3)*"+ _bezier.point4[1];
+        };
 
-
-
+        //Move the lines of Polygon when the draggers are being moved
+        var moveControlPolygonLines= function(_bezier){
+          _bezier.controlPolygon.point1 = _bezier.point1;
+          _bezier.controlPolygon.point2 = _bezier.point2;
+          _bezier.controlPolygon.point3 = _bezier.point3;
+          _bezier.controlPolygon.point4 = _bezier.point4;
         };
 
         return BezierCurve;
